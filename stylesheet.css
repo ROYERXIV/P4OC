@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+}
+#navbar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+#logo {
+    width: 20%;
+}
+#main_nav {
+    width: 80%;
+}
+#main_nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+}
+#welcome {
+    position: relative;
+}
+#welcome_text {
+    position: absolute;
+    background-color: rgba(18, 18, 18, 0.9);;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 50%;
+    padding: 15px;
+    border-radius: 15px;
+
+}
+#welcome_text  p {
+    font-size: 3em;
+    color: white;
+}
+#welcome_img {
+    max-width: 100%;
+}
+
+#presentation {
+    text-align: center;
+    justify-content: space-between;
+}
+#presentation_content {
+    display: flex;
+}
+#presentation_content p {
+    margin: 0 50px 0 50px;
+}
+#presentation_content img {
+    max-width: 700px;
+}
+
+
+#last_post {
+    width: 100%;
+    background-color: black;
+    padding: 30px 0 30px 0;
+}
+
+#last_post_card {
+    width: 400px;
+    background-color: white;
+    margin: 0 auto;
+    text-align: center;
+}
