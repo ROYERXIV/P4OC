@@ -11,4 +11,13 @@ if ($action=="saveInscription"){
     echo " routeur";
     saveInscription();
 }
+
+require "loginControlller.php";
+if ($action=="login"){
+    login();
+}
+if ($action=="loginCheck"){
+    loginTry();
+}
+
 ?>

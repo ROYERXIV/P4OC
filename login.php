@@ -10,7 +10,7 @@
 <body>
 <div id="inscription">
     <h1> Connexion </h1>
-    <form method="post" action="index.php?action=loginModel">
+    <form method="post" action="index.php?action=loginCheck">
         <p> Pseudo </p>
         <input type="text" name="pseudo"/>
         <p> Mot de passe</p>
