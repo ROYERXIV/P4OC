@@ -14,8 +14,6 @@ class LoginModel
            $requete-> execute([$pseudo]);
            $results = $requete->fetch();
            $hash = $results['hash'];
-           var_dump($hash);
-           var_dump($password);
            if (password_verify ( $password , $hash )){
                 echo "Bonjour $pseudo";
                 $_SESSION['pseudo'] = $pseudo;

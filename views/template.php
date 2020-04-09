@@ -25,7 +25,7 @@
        <?= $content ?>
 
         <footer>
-    <a href="views/inscription.php"> Inscription </a>
+    <a href="inscription.php"> Inscription </a>
     <a href="connexion.php"> Connexion </a>
         </footer>
 </body>

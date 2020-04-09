@@ -1,14 +1,14 @@
 <?php
-require "userModel.php";
+require "models/UserModel.php";
 
 function inscription(){
-include("inscription.php");
+include("views/inscription.php");
 }
 
 function saveInscription(){
-echo "controlleur";
 $model = new UserModel();
 // controller que pseudo et password existent
 $model->createUser($_POST['pseudo'],$_POST['password']);
-include("confirmInscription.php");
+include("views/confirmInscription.php");
+echo "confirmationnnnn";
 }

@@ -1,6 +1,6 @@
-<?php
+<?php session_start();
 
-require "inscriptionController.php";
+require "controllers/inscriptionController.php";
 $action = $_GET["action"];
 
 if ($action=="inscription"){
@@ -8,11 +8,10 @@ if ($action=="inscription"){
 }
 
 if ($action=="saveInscription"){
-    echo " routeur";
     saveInscription();
 }
 
-require "loginControlller.php";
+require "controllers/loginController.php";
 if ($action=="login"){
     login();
 }
