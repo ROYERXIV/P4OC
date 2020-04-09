@@ -1,8 +1,8 @@
 <?php
-require"loginModel.php";
+require "models/loginModel.php";
 
 function login(){
- include("login.php");
+ include("views/login.php");
 }
 
 function loginTry(){

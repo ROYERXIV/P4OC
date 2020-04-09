@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8"/>
     <title> Inscription validée</title>
-    <link href="stylesheet.css" rel="stylesheet">
+    <link href="public/stylesheet.css" rel="stylesheet">
 </head>
 
 <body>

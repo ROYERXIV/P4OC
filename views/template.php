@@ -1,11 +1,10 @@
-<?php session_start() ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8"/>
-    <title> Billet simple pour l'Alaska </title>
-    <link href="stylesheet.css" rel="stylesheet">
+    <title> <?php echo $title; ?> </title>
+    <link href="public/stylesheet.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,10 +25,8 @@
        <?= $content ?>
 
         <footer>
-    <a href="inscription.php"> Inscription </a>
+    <a href="views/inscription.php"> Inscription </a>
     <a href="connexion.php"> Connexion </a>
         </footer>
 </body>
-
-
 </html>

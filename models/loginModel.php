@@ -18,6 +18,7 @@ class LoginModel
            var_dump($password);
            if (password_verify ( $password , $hash )){
                 echo "Bonjour $pseudo";
+                $_SESSION['pseudo'] = $pseudo;
            }
            else {
                echo " c pas bon";
