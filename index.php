@@ -1,6 +1,6 @@
 <?php session_start();
 
-require "controllers/inscriptionController.php";
+require "controllers/userController.php";
 $action = $_GET["action"];
 
 if ($action=="inscription"){
@@ -11,7 +11,6 @@ if ($action=="saveInscription"){
     saveInscription();
 }
 
-require "controllers/loginController.php";
 if ($action=="login"){
     login();
 }
@@ -19,4 +18,17 @@ if ($action=="loginCheck"){
     loginTry();
 }
 
+require "postController.php";
+
+if ($action=="newPost"){
+    newPost();
+}
+
+if ($action=="sendNewPost"){
+    sendNewPost();
+}
+
+if($action=="getPostList"){
+    postList();
+}
 ?>

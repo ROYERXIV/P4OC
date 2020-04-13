@@ -10,7 +10,6 @@
 
 <body>
 <section id="header">
-    <?php include('navbar.php') ?>
     <div id="welcome">
         <img src="public/img/home_alaska.jpg" id="welcome_img">
         <div id="welcome_text">
