@@ -15,6 +15,13 @@ class PostModel extends DbModel
         $requete = $bdd->query("SELECT * FROM billets");
         return $requete;
     }
+
+    public function getPost(){
+        $bdd = $this->dbConnect();
+        $requete = $bdd->query("SELECT * FROM billets");
+        return $requete;
+
+    }
 }
 
 ?>

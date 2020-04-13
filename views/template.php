@@ -33,9 +33,12 @@
 </header>
 <?= $content ?>
 
-<footer class="page-footer font-small blue pt-4">
-    <a href="inscription.php"> Inscription </a>
-    <a href="connexion.php"> Connexion </a>
+<footer id="page-footer">
+    <p> Ceci est un site fictif dédié a un projet Openclassrooms</p>
+    <div id="button-container">
+        <button type="button" class="btn btn-secondary">Inscription</button>
+        <button type="button" class="btn btn-success">Connexion</button>
+    </div>
 </footer>
 </body>
 </html>
