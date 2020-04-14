@@ -1,4 +1,9 @@
 <?php session_start();
+$action = $_GET["action"];
+
+if($action=="accueil"){
+    include("homepage.php");
+}
 
 require "controllers/userController.php";
 $action = $_GET["action"];
@@ -25,10 +30,26 @@ if ($action=="newPost"){
 }
 
 if ($action=="sendNewPost"){
-    sendNewPost();
+    sendPost();
 }
 
 if($action=="getPostList"){
     postList();
+}
+
+if($action=="getPost"){
+    getPostController();
+}
+
+if($action=="editPost"){
+    getPostUpdate();
+}
+
+if($action=="updatePost"){
+    updatePost();
+}
+
+if($action=="deletePost"){
+    deletePost();
 }
 ?>

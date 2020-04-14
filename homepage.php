@@ -1,13 +1,5 @@
-<?php session_start() ?>
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8"/>
-    <title> Billet simple pour l'Alaska </title>
-    <link href="public/stylesheet.css" rel="stylesheet">
-</head>
-
+<?php $title = 'Accueil';?>
+<?php ob_start() ;?>
 <body>
 <section id="header">
     <div id="welcome">
@@ -38,6 +30,5 @@
         </div>
 </section>
 </body>
-
-
-</html>
+<?php $content = ob_get_clean();?>
+<?php require "views/template.php";?>

@@ -24,8 +24,8 @@
     <nav class="navbar navbar-dark bg-dark">
        <a class="navbar-brand" href="#"> Billet Simple Pour L'Alaska</a>
         <ul class="navbar-nav navbar-expand-sm">
-            <li class="nav-item"><a class="nav-link"> Accueil</a></li>
-            <li class="nav-item"><a class="nav-link"> Les billets</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.php?action=accueil"> Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.php?action=getPostList"> Les billets</a></li>
             <li class="nav-item"><a class="nav-link"> Jean Forteroche</a></li>
         </ul>
     </nav>
@@ -36,8 +36,8 @@
 <footer id="page-footer">
     <p> Ceci est un site fictif dédié a un projet Openclassrooms</p>
     <div id="button-container">
-        <button type="button" class="btn btn-secondary">Inscription</button>
-        <button type="button" class="btn btn-success">Connexion</button>
+        <a role="button" class="btn btn-secondary" href="index.php?action=inscription">Inscription</a>
+        <a role="button" class="btn btn-success" href="index.php?action=login">Connexion</a>
     </div>
 </footer>
 </body>
