@@ -52,4 +52,13 @@ if($action=="updatePost"){
 if($action=="deletePost"){
     deletePost();
 }
+
+if($action=="writeComment"){
+    writeCommentController();
+}
+
+if($action=="sendComment"){
+    sendCommentController();
+}
+
 ?>

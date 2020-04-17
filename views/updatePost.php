@@ -11,7 +11,7 @@
             <textarea id="createPostArea" name="createPostArea">
                 <?= $data['billet'];?>
             </textarea>
-    <input type="hidden" id="postID" name="postID" value="<?= $data['ID'];?>">
+    <input type="hidden" id="postID" name="postID" value="<?= $data['postID'];?>">
     <input type="submit" value="Modifier le billet"/>
 </form>
 </body>

@@ -18,16 +18,16 @@ class PostModel extends DbModel
 
     public function getPost($postID){
         $bdd = $this->dbConnect();
-        $requete = $bdd->prepare("SELECT * FROM billets WHERE ID = ?");
+        $requete = $bdd->prepare("SELECT * FROM billets WHERE postID = ?");
         $requete->execute([$postID]);
         return $requete;
     }
 
-    public function updatePost($updateTitle, $updatePost,$ID)
+    public function updatePost($updateTitle, $updatePost,$postID)
     {
         $bdd = $this->dbConnect();
-        $requete = $bdd->prepare("UPDATE billets SET titre= ?, billet=? WHERE ID = ? ");
-        $requete->execute([htmlspecialchars($updateTitle), htmlspecialchars($updatePost),htmlspecialchars($ID)]);
+        $requete = $bdd->prepare("UPDATE billets SET titre= ?, billet=? WHERE postID = ? ");
+        $requete->execute([htmlspecialchars($updateTitle), htmlspecialchars($updatePost),htmlspecialchars($postID)]);
     }
 
     public function deletePost($postID){
@@ -36,6 +36,14 @@ class PostModel extends DbModel
         $requete = $bdd->prepare("DELETE FROM billets WHERE ID = ? ");
         $requete->execute([$postID]);
     }
+
+    public function sendComment($postID, $pseudo, $comment)
+    {
+        $bdd = $this->dbConnect();
+        $requete = $bdd->prepare("INSERT INTO commentaires (postID,pseudo,comment) VALUE (?,?,?)");
+        $requete->execute([$postID,$pseudo,$comment]);
+    }
+
 }
 
 ?>
