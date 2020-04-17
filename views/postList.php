@@ -8,7 +8,7 @@ foreach($data as $post)
 ?>
     <div class="card">
     <div class="card-body">
-        <h2 class="cardTitle"> <a href="index.php?action=getPost&postID=<?= $post['postID'];?> "><?=$post['titre'];?> </a></h2>
+        <h2 class="cardTitle"> <a href="index.php?action=getPostWithComments&postID=<?= $post['postID'];?> "><?=$post['titre'];?> </a></h2>
         <p class="cardText"><?=$post['billet'];?></p>
         <a href="index.php?action=editPost&postID=<?= $post['postID'];?>" class="card-link"> Modifier </a>
         <a href="index.php?action=deletePost&postID=<?= $post['postID'];?>" class="card-link"> Supprimer </a>

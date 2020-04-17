@@ -44,6 +44,13 @@ class PostModel extends DbModel
         $requete->execute([$postID,$pseudo,$comment]);
     }
 
+    public function getComments($postID)
+    {
+        $bdd = $this->dbConnect();
+        $requete = $bdd->prepare("SELECT * FROM commentaires WHERE postID = ? ");
+        $requete->execute([$postID]);
+        return $requete;
+    }
 }
 
 ?>

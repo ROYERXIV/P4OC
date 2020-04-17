@@ -84,22 +84,17 @@ function sendCommentController(){
         postList();
 }
 
-function getPostWithCommentsController()
-{
-    if (isset($_GET['postID'])) {
+function getPostWithComments(){
+    if(isset($_GET['postID'])){
         $postID = $_GET['postID'];
         $model = new postModel();
         $postData = $model->getPost($postID);
-        getComments($postID);
+        $commentData = $model->getComments($postID);
         include("views/getPost.php");
     } else {
         $errorCode = "404";
-        $errorMessage = "Cette page n'existe pas";
-        include("views/error.php");
-    };
+        $errorMessage = " Cette page n'existe pas";
+        include ("views/error.php");
+    }
 }
-
-
-
-
 ?>

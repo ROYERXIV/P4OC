@@ -60,5 +60,7 @@ if($action=="writeComment"){
 if($action=="sendComment"){
     sendCommentController();
 }
-
+if($action=="getPostWithComments"){
+    getPostWithComments();
+}
 ?>
