@@ -23,6 +23,13 @@ if ($action=="loginCheck"){
     loginTry();
 }
 
+if($action=="deconnexion"){
+    deconnexion();
+}
+if($action=="adminPanel"){
+    adminPanel();
+}
+
 require "postController.php";
 
 if ($action=="newPost"){
@@ -62,5 +69,21 @@ if($action=="sendComment"){
 }
 if($action=="getPostWithComments"){
     getPostWithComments();
+}
+
+if($action=="reportComment"){
+    reportComment();
+}
+
+if($action=="getReportedComments"){
+    getReportedComments();
+}
+
+if($action=="approveComment"){
+    approveComment();
+}
+
+if($action=="deleteComment"){
+    deleteComment();
 }
 ?>

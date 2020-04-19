@@ -47,9 +47,37 @@ class PostModel extends DbModel
     public function getComments($postID)
     {
         $bdd = $this->dbConnect();
-        $requete = $bdd->prepare("SELECT * FROM commentaires WHERE postID = ? ");
+        $requete = $bdd->prepare("SELECT * FROM commentaires WHERE postID = ? AND isReported = 0 ");
         $requete->execute([$postID]);
         return $requete;
+    }
+
+    public function reportComment($commentID)
+    {
+        $bdd = $this->dbConnect();
+        $requete = $bdd->prepare("UPDATE commentaires SET isReported = 1 WHERE commentID = ?");
+        $requete->execute([$commentID]);
+    }
+
+    public function getReportedComments()
+    {
+        $bdd = $this->dbConnect();
+        $requete = $bdd->query("SELECT * FROM commentaires WHERE isReported = 1");
+        return $requete;
+    }
+
+    public function approveComment($commentID)
+    {
+        $bdd = $this->dbConnect();
+        $requete = $bdd->prepare("UPDATE commentaires SET isReported = 0 WHERE commentID = ?");
+        $requete->execute([$commentID]);
+    }
+
+    public function deleteComment($commentID)
+    {
+        $bdd = $this->dbConnect();
+        $requete = $bdd->prepare("DELETE FROM commentaires WHERE commentID = ?");
+        $requete->execute([$commentID]);
     }
 }
 

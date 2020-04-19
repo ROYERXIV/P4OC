@@ -10,8 +10,14 @@ foreach($data as $post)
     <div class="card-body">
         <h2 class="cardTitle"> <a href="index.php?action=getPostWithComments&postID=<?= $post['postID'];?> "><?=$post['titre'];?> </a></h2>
         <p class="cardText"><?=$post['billet'];?></p>
-        <a href="index.php?action=editPost&postID=<?= $post['postID'];?>" class="card-link"> Modifier </a>
-        <a href="index.php?action=deletePost&postID=<?= $post['postID'];?>" class="card-link"> Supprimer </a>
+        <?php
+        if(isset($_SESSION['pseudo'])){
+            echo "<a href=\"index.php?action=editPost&postID=".$post['postID']."\" class=\"card-link\"> Modifier </a>";
+            echo "<a href=\"index.php?action=deletePost&postID=". $post['postID']."\" class=\"card-link\"> Supprimer </a>";
+        } else {
+            echo "<a href=\"index.php?action=getPostWithComments&postID=". $post['postID']."\" > Lire la suite </a>";
+        }
+        ?>
     </div>
     </div>
 <?php

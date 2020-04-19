@@ -97,4 +97,47 @@ function getPostWithComments(){
         include ("views/error.php");
     }
 }
+
+function reportComment(){
+    if(isset($_GET['commentID'])){
+        $commentID = $_GET['commentID'];
+        $model = new postModel();
+        $model->reportComment($commentID);
+        postList();
+    } else {
+        $errorCode = "404";
+        $errorMessage = "Cette page n'existe pas";
+        include("views/error.php");
+    }
+}
+function getReportedComments(){
+    $model = new postModel();
+    $reportedComments = $model->getReportedComments();
+    include("views/reportedComments.php");
+}
+
+function approveComment(){
+    if(isset($_GET['commentID'])){
+        $commentID = $_GET['commentID'];
+        $model = new postModel();
+        $model->approveComment($commentID);
+        getReportedComments();
+    } else {
+        $errorCode = "404";
+        $errorMessage = "Cette page n'existe pas";
+        include("views/error.php");
+    }
+}
+function deleteComment(){
+    if(isset($_GET['commentID'])){
+        $commentID = $_GET['commentID'];
+        $model = new postModel();
+        $model->deleteComment($commentID);
+        getReportedComments();
+    } else {
+        $errorCode = "404";
+        $errorMessage = "Cette page n'existe pas";
+        include("views/error.php");
+    }
+}
 ?>

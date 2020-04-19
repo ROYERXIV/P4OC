@@ -36,8 +36,13 @@
 <footer id="page-footer">
     <p> Ceci est un site fictif dédié a un projet Openclassrooms</p>
     <div id="button-container">
-        <a role="button" class="btn btn-secondary" href="index.php?action=inscription">Inscription</a>
-        <a role="button" class="btn btn-success" href="index.php?action=login">Connexion</a>
+        <?php if(isset($_SESSION['pseudo'])){
+            echo "<a role=\"button\" class=\"btn btn-secondary\" href=\"index.php?action=deconnexion\">Deconnexion</a>";
+            echo "<a role=\"button\" class=\"btn btn-secondary\" href=\"index.php?action=adminPanel\">Gestion du site</a>";
+        } else {
+            echo "<a role=\"button\" class=\"btn btn-success\" href=\"index.php?action=login\">Connexion</a>";
+    }
+    ?>
     </div>
 </footer>
 </body>

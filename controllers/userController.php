@@ -24,6 +24,15 @@ function loginTry()
 {
     $model = new UserModel();
     $model->loginUser($_POST['pseudo'], $_POST['password']);
+    adminPanel();
+}
+
+function deconnexion(){
+    session_destroy();
+}
+
+function adminPanel(){
+    include("views/adminPanel.php");
 }
 
 ?>
