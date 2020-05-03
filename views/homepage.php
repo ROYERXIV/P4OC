@@ -27,7 +27,7 @@
                 cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumequat. Duis aute irure dolor
                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </p>
-            <img src="public/img/man-2785071_1920.jpg">
+            <img src="public/img/man-2785071_1920.jpg" id="photo-forteroche">
         </div>
         <div id="last-posts">
             <h2> Les derniers billets:</h2>
@@ -36,17 +36,18 @@
             {
                 $extrait = substr($post['billet'],0,250);
                 ?>
-            <div class="lastpost-card card">
-                <div class="card-body">
-                <h5 class="card-title"><a class="card-title" href="../index.php?action=getPostWithComments&postID=<?= $post['postID'];?> "> <?= $post['titre'];?></a></h5>
-                <p><?= "$extrait...";?></p>
+                <div class="lastpost-card card">
+                    <div class="card-body">
+                        <h5 class="card-title"><a class="card-title" href="index.php?action=getPostWithComments&postID=<?= $post['postID'];?> "> <?= $post['titre'];?></a></h5>
+                        <p><?= "$extrait...";?></p>
+                    </div>
                 </div>
-            </div>
         <?php
             }
             ?>
             </div>
         </div>
+    </div>
 
 <?php $content = ob_get_clean();?>
 <?php require "views/template.php";?>

@@ -24,7 +24,6 @@
 <section id="main">
     <?= $content ?>
 </section>
-
 <footer id="page-footer">
     <p> Ceci est un site fictif dédié a un projet Openclassrooms</p>
     <div id="button-container">

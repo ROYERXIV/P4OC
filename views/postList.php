@@ -5,7 +5,8 @@
 <?php
 foreach($data as $post)
 {
-    $extrait = substr($post['billet'],0,1000);
+    $substr = substr($post['billet'], 0, 1000);
+    $extrait = substr($substr, 0, strrpos($substr, ' '));
 ?>
     <div class="card">
     <div class="card-body">

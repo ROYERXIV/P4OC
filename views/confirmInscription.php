@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8"/>
-    <title> Inscription validée</title>
-    <link href="../public/stylesheet.css" rel="stylesheet">
-</head>
-
-<body>
-<div>
-    <h1>Votre inscription a bien été prise en compte</h1>
+<?php $title = "Inscription réussie";?>
+<?php ob_start();?>
+<div class="container">
+    <h2 class="text-center">Votre inscription a bien été prise en compte.</h2>
 </div>
-</body>
-
-
-</html>
+<?php $content = ob_get_clean();?>
+<?php include "views/template.php";?>

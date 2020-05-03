@@ -1,12 +1,14 @@
 <?php $title = " Commentaires signalés "; ?>
 <?php ob_start();?>
-<div id="reported-comments">
+<div class="container">
 <?php foreach ($reportedComments as $commentaire)
 {?>
-    <p><?= $commentaire['pseudo'];?></p>
+    <div class="text-center">
+    <p><?= $commentaire['pseudo'];?> a écrit:</p>
     <p> <?= $commentaire['comment'];?> </p>
-    <a href="index.php?action=approveComment&commentID=<?= $commentaire['commentID'];?>">Autoriser</a>
-    <a href="index.php?action=deleteComment&commentID=<?= $commentaire['commentID'];?>">Supprimer</a>
+    <a role="button" class="btn btn-success" href="index.php?action=approveComment&commentID=<?= $commentaire['commentID'];?>">Autoriser</a>
+    <a role="button" class="btn btn-danger" href="index.php?action=deleteComment&commentID=<?= $commentaire['commentID'];?>">Supprimer</a>
+    </div>
 <?php
 }
 ?>

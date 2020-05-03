@@ -12,7 +12,7 @@ class PostModel extends DbModel
 
     public function getPostList(){
         $bdd = $this->dbConnect();
-        $requete = $bdd->query("SELECT * FROM billets");
+        $requete = $bdd->query("SELECT * FROM billets ORDER BY postID DESC");
         return $requete;
     }
 

@@ -21,9 +21,8 @@ class UserModel extends DbModel
             $hash = $results['hash'];
             if (password_verify($password, $hash)) {
                 $_SESSION['pseudo'] = $pseudo;
-                echo $_SESSION['pseudo'];
             } else {
-                echo " c'est pas bon";
+                echo " Identifiants incorrects";
             }
 
     }

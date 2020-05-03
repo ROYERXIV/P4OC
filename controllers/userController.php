@@ -15,10 +15,8 @@ function inscription()
 function saveInscription()
 {
     $model = new UserModel();
-// controller que pseudo et password existent
     $model->createUser($_POST['pseudo'], $_POST['password']);
     include("views/confirmInscription.php");
-    echo "confirmationnnnn";
 }
 
 function login()
@@ -35,6 +33,8 @@ function loginTry()
 
 function deconnexion(){
     session_destroy();
+    include("views/deconnexionConfirm.php");
+
 }
 
 function adminPanel(){
