@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html>
+<?php $title = "Se connecter";?>
+<?php ob_start();?>
 
-<head>
-    <meta charset="utf-8"/>
-    <title> Login </title>
-    <link href="public/stylesheet.css" rel="stylesheet">
-</head>
-<body>
+    <div class="container">
     <h1>Se connecter</h1>
     <form method="post" action="index.php?action=loginCheck">
-        <p> Pseudo</p>
-        <input type="text" name="pseudo">
-        <p>Mot de passe</p>
-        <input type="text" name="password">
-        <input type="submit" value="Se connecter "/>
+        <div class="form-group">
+            <label for="pseudo"> Votre Pseudo:</label>
+            <input type="text" name="pseudo" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="password"> Votre mot de passe:</label>
+            <input type="text" name="password" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-primary"> Se connecter </button>
     </form>
-</body>
-</html>
+    </div>
+<?php $content = ob_get_clean();?>
+<?php include("views/template.php");?>

@@ -7,7 +7,7 @@ class PostModel extends DbModel
     {
         $bdd = $this->dbConnect();
         $requete = $bdd->prepare("INSERT INTO billets (titre,billet) VALUE (?,?)");
-        $requete->execute([htmlspecialchars($newPostTitle), htmlspecialchars($newPost)]);
+        $requete->execute([$newPostTitle,$newPost]);
     }
 
     public function getPostList(){
@@ -23,17 +23,23 @@ class PostModel extends DbModel
         return $requete;
     }
 
+    public function getLastPosts(){
+        $bdd = $this->dbConnect();
+        $requete = $bdd->query("SELECT * FROM billets LIMIT 3");
+        return $requete;
+    }
+
     public function updatePost($updateTitle, $updatePost,$postID)
     {
         $bdd = $this->dbConnect();
         $requete = $bdd->prepare("UPDATE billets SET titre= ?, billet=? WHERE postID = ? ");
-        $requete->execute([htmlspecialchars($updateTitle), htmlspecialchars($updatePost),htmlspecialchars($postID)]);
+        $requete->execute([$updateTitle,$updatePost,$postID]);
     }
 
     public function deletePost($postID){
 
         $bdd = $this->dbConnect();
-        $requete = $bdd->prepare("DELETE FROM billets WHERE ID = ? ");
+        $requete = $bdd->prepare("DELETE FROM billets WHERE postID = ? ");
         $requete->execute([$postID]);
     }
 
@@ -47,10 +53,11 @@ class PostModel extends DbModel
     public function getComments($postID)
     {
         $bdd = $this->dbConnect();
-        $requete = $bdd->prepare("SELECT * FROM commentaires WHERE postID = ? AND isReported = 0 ");
+        $requete = $bdd->prepare("SELECT * FROM commentaires WHERE postID = ? ");
         $requete->execute([$postID]);
         return $requete;
     }
+
 
     public function reportComment($commentID)
     {
@@ -78,6 +85,13 @@ class PostModel extends DbModel
         $bdd = $this->dbConnect();
         $requete = $bdd->prepare("DELETE FROM commentaires WHERE commentID = ?");
         $requete->execute([$commentID]);
+    }
+
+    public function deleteAllComments($postID)
+    {
+        $bdd = $this->dbConnect();
+        $requete = $bdd->prepare("DELETE FROM commentaires WHERE postID = ?");
+        $requete->execute([$postID]);
     }
 }
 

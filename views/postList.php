@@ -1,15 +1,16 @@
 <?php $title = 'Liste des billets'; ?>
 <body>
 <?php ob_start(); ?>
-<div id="postList">
+<div class="container">
 <?php
 foreach($data as $post)
 {
+    $extrait = substr($post['billet'],0,1000);
 ?>
     <div class="card">
     <div class="card-body">
         <h2 class="cardTitle"> <a href="index.php?action=getPostWithComments&postID=<?= $post['postID'];?> "><?=$post['titre'];?> </a></h2>
-        <p class="cardText"><?=$post['billet'];?></p>
+        <p class="cardText"><?php echo "$extrait...";?></p>
         <?php
         if(isset($_SESSION['pseudo'])){
             echo "<a href=\"index.php?action=editPost&postID=".$post['postID']."\" class=\"card-link\"> Modifier </a>";

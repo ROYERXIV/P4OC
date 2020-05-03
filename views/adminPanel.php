@@ -1,7 +1,7 @@
 <?php $title = "Panneau d'administation";?>
 <?php ob_start();?>
-    <div id="admin-panel">
-        <h2> Bonjour <?= $_SESSION['pseudo'];?></h2>
+    <div class="container">
+        <h2 class="text-center"> Bonjour <?= $_SESSION['pseudo'];?></h2>
         <div id="admin-panel-container">
             <a role="button" class="btn btn-secondary" href="index.php?action=newPost">Ecrire un nouveau billet</a>
             <a role="button" class="btn btn-secondary" href="index.php?action=getReportedComments">Gerer les commentaires</a>

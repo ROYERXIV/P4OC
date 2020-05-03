@@ -1,5 +1,31 @@
+html {
+    height: 100%;
+}
 body {
+    min-height: 100%;
     margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    padding-bottom: 8vh;
+}
+.card {
+    padding: 0 5px 0 5px;
+}
+
+
+#page-footer {
+    position: absolute;
+    width: 100% ;
+    height: 8vh;
+    bottom: 0;
+}
+
+#button-container {
+    margin-right: 10px;
+}
+#button-container a {
+    margin-left: 10px;
 }
 
 .nav-item {
@@ -40,21 +66,27 @@ body {
 }
 #presentation_content img {
     max-width: 700px;
+    max-height: 500px;
 }
 
 
-#last_post {
+#last-posts {
     width: 100%;
-    background-color: black;
-    padding: 30px 0 30px 0;
+    background-color: #263238;
+    padding: 25px 10% 25px 10%;
+}
+#last-posts h2 {
+    color: white;
 }
 
-#last_post_card {
-    width: 400px;
-    background-color: white;
-    margin: 0 auto;
-    text-align: center;
+#cards-container {
+    padding-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
 
 #page-footer {
     background-color: #263238;
@@ -69,4 +101,54 @@ body {
 #button-container button{
     margin-left: 15px;
     margin-right: 10px;
+}
+
+#admin-panel-container {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column !important;
+}
+
+#admin-panel-container a {
+    width: 100%;
+    margin-top: 25px;
+    padding: 20px;
+}
+
+#titlePostArea {
+    width: 50%;
+}
+
+.lastpost-card {
+    width: 30%;
+}
+
+#full-post {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.commentaires {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1249px) {
+
+    #presentation_content {
+        flex-direction: column;
+        align-items: center;
+    }
+    #presentation_content img {
+        margin-top: 10px;
+    }
+    #cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .lastpost-card {
+        width: 100%;
+        margin-bottom: 25px;
+    }
 }

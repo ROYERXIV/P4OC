@@ -1,10 +1,6 @@
 <?php session_start();
 $action = $_GET["action"];
 
-if($action=="accueil"){
-    include("homepage.php");
-}
-
 require "controllers/userController.php";
 $action = $_GET["action"];
 
@@ -30,7 +26,11 @@ if($action=="adminPanel"){
     adminPanel();
 }
 
-require "postController.php";
+require "controllers/postController.php";
+
+if($action=="accueil"){
+    lastPosts();
+}
 
 if ($action=="newPost"){
     newPost();
@@ -85,5 +85,9 @@ if($action=="approveComment"){
 
 if($action=="deleteComment"){
     deleteComment();
+}
+
+if($action=="biographie"){
+    include("views/biographie.php");
 }
 ?>

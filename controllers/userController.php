@@ -3,7 +3,13 @@ require "models/UserModel.php";
 
 function inscription()
 {
-    include("views/inscription.php");
+    if(isset($_SESSION['pseudo'])) {
+        include("views/inscription.php");
+    } else {
+        $errorCode = "404";
+        $errorMessage = " Cette page n'existe pas";
+        include ("views/error.php");
+    }
 }
 
 function saveInscription()
@@ -22,9 +28,9 @@ function login()
 
 function loginTry()
 {
-    $model = new UserModel();
-    $model->loginUser($_POST['pseudo'], $_POST['password']);
-    adminPanel();
+        $model = new UserModel();
+        $model->loginUser($_POST['pseudo'], $_POST['password']);
+        adminPanel();
 }
 
 function deconnexion(){
@@ -32,7 +38,14 @@ function deconnexion(){
 }
 
 function adminPanel(){
-    include("views/adminPanel.php");
+    if(isset($_SESSION['pseudo'])){
+        include("views/adminPanel.php");
+    } else {
+        $errorCode = "404";
+        $errorMessage = " Cette page n'existe pas";
+        include ("views/error.php");
+    }
+
 }
 
 ?>
